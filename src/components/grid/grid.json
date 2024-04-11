@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_grid_grids",
+  "info": {
+    "displayName": "Grid",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Columns": {
+      "type": "integer"
+    },
+    "Cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "card.card"
+    },
+    "Alignment": {
+      "type": "string"
+    },
+    "Gap_X": {
+      "type": "integer"
+    },
+    "Style": {
+      "type": "json"
+    },
+    "Order": {
+      "type": "integer"
+    },
+    "Gap_Y": {
+      "type": "integer"
+    }
+  }
+}

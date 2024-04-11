@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "grid_dynamic_zones",
+  "info": {
+    "singularName": "grid-dynamic-zone",
+    "pluralName": "grid-dynamic-zones",
+    "displayName": "GridCardSection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Grid": {
+      "type": "component",
+      "repeatable": false,
+      "component": "grid.grid"
+    },
+    "test": {
+      "type": "string"
+    }
+  }
+}
