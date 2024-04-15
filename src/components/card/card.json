@@ -25,9 +25,6 @@
     },
     "Link": {
       "type": "string"
-    },
-    "ColumnAdded1": {
-      "type": "string"
     }
   }
 }

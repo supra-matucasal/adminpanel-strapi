@@ -11,7 +11,6 @@ export interface CardCard extends Schema.Component {
     Description: Attribute.Text;
     Image: Attribute.Media;
     Link: Attribute.String;
-    ColumnAdded1: Attribute.String;
   };
 }
 

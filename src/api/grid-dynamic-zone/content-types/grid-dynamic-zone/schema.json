@@ -23,14 +23,6 @@
     },
     "test": {
       "type": "string"
-    },
-    "GridCardNewColumn": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string"
     }
   }
 }
