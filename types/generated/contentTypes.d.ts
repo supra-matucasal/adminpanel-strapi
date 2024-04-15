@@ -381,7 +381,6 @@ export interface ApiGridDynamicZoneGridDynamicZone
   };
   attributes: {
     Grid: Attribute.Component<'grid.grid'>;
-    test: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

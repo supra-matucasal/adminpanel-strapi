@@ -20,9 +20,6 @@
       "type": "component",
       "repeatable": false,
       "component": "grid.grid"
-    },
-    "test": {
-      "type": "string"
     }
   }
 }
