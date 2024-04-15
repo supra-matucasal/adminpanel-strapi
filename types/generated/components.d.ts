@@ -4,12 +4,14 @@ export interface CardCard extends Schema.Component {
   collectionName: 'components_card_cards';
   info: {
     displayName: 'Card';
+    description: '';
   };
   attributes: {
     Title: Attribute.String;
     Description: Attribute.Text;
     Image: Attribute.Media;
     Link: Attribute.String;
+    ColumnAdded1: Attribute.String;
   };
 }
 
