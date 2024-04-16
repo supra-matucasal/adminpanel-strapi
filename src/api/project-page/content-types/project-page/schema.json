@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_pages",
+  "info": {
+    "singularName": "project-page",
+    "pluralName": "project-pages",
+    "displayName": "ProjectPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "body": {
+      "type": "dynamiczone",
+      "components": []
+    }
+  }
+}
