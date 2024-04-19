@@ -958,6 +958,124 @@ export interface ApiPagePage extends Schema.CollectionType {
   };
 }
 
+export interface ApiPartnershipPartnership extends Schema.CollectionType {
+  collectionName: 'partnerships';
+  info: {
+    singularName: 'partnership';
+    pluralName: 'partnerships';
+    displayName: 'Partnership';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Name: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Slug: Attribute.String &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Image: Attribute.Media &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::partnership.partnership',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::partnership.partnership',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::partnership.partnership',
+      'oneToMany',
+      'api::partnership.partnership'
+    >;
+    locale: Attribute.String;
+  };
+}
+
+export interface ApiPartnershipsPagePartnershipsPage
+  extends Schema.CollectionType {
+  collectionName: 'partnerships_pages';
+  info: {
+    singularName: 'partnerships-page';
+    pluralName: 'partnerships-pages';
+    displayName: 'PartnershipsPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    header: Attribute.Component<'shared.header'> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    blocks: Attribute.DynamicZone<['blocks.cta']> &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::partnerships-page.partnerships-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::partnerships-page.partnerships-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    localizations: Attribute.Relation<
+      'api::partnerships-page.partnerships-page',
+      'oneToMany',
+      'api::partnerships-page.partnerships-page'
+    >;
+    locale: Attribute.String;
+  };
+}
+
 export interface ApiProjectProject extends Schema.CollectionType {
   collectionName: 'projects';
   info: {
@@ -1029,48 +1147,6 @@ export interface ApiProjectProject extends Schema.CollectionType {
   };
 }
 
-export interface ApiProjectPageProjectPage extends Schema.CollectionType {
-  collectionName: 'project_pages';
-  info: {
-    singularName: 'project-page';
-    pluralName: 'project-pages';
-    displayName: 'ProjectPage';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    body: Attribute.DynamicZone<[]>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::project-page.project-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::project-page.project-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::project-page.project-page',
-      'oneToMany',
-      'api::project-page.project-page'
-    >;
-    locale: Attribute.String;
-  };
-}
-
 export interface ApiTestTest extends Schema.CollectionType {
   collectionName: 'tests';
   info: {
@@ -1114,8 +1190,9 @@ declare module '@strapi/types' {
       'api::global.global': ApiGlobalGlobal;
       'api::grid-dynamic-zone.grid-dynamic-zone': ApiGridDynamicZoneGridDynamicZone;
       'api::page.page': ApiPagePage;
+      'api::partnership.partnership': ApiPartnershipPartnership;
+      'api::partnerships-page.partnerships-page': ApiPartnershipsPagePartnershipsPage;
       'api::project.project': ApiProjectProject;
-      'api::project-page.project-page': ApiProjectPageProjectPage;
       'api::test.test': ApiTestTest;
     }
   }

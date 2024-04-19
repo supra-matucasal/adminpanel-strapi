@@ -91,6 +91,19 @@ export interface BlocksHero extends Schema.Component {
   };
 }
 
+export interface BlocksPartnershipsList extends Schema.Component {
+  collectionName: 'components_slices_partnerships';
+  info: {
+    displayName: 'partnerships';
+    icon: 'search-plus';
+  };
+  attributes: {
+    theme: Attribute.Enumeration<['primary', 'secondary', 'muted']> &
+      Attribute.DefaultTo<'secondary'>;
+    header: Attribute.Component<'shared.header'>;
+  };
+}
+
 export interface BlocksPricing extends Schema.Component {
   collectionName: 'components_slices_pricings';
   info: {
@@ -422,6 +435,7 @@ declare module '@strapi/types' {
       'blocks.features-with-images': BlocksFeaturesWithImages;
       'blocks.features': BlocksFeatures;
       'blocks.hero': BlocksHero;
+      'blocks.partnerships-list': BlocksPartnershipsList;
       'blocks.pricing': BlocksPricing;
       'blocks.team': BlocksTeam;
       'blocks.testimonial': BlocksTestimonial;

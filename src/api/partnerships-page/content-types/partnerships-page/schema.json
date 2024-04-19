@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "partnerships_pages",
+  "info": {
+    "singularName": "partnerships-page",
+    "pluralName": "partnerships-pages",
+    "displayName": "PartnershipsPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.header"
+    },
+    "blocks": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "blocks.cta"
+      ]
+    }
+  }
+}

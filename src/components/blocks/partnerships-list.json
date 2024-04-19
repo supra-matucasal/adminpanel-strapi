@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_slices_partnerships",
+  "info": {
+    "displayName": "partnerships",
+    "icon": "search-plus"
+  },
+  "options": {},
+  "attributes": {
+    "theme": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "muted"
+      ],
+      "default": "secondary"
+    },
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.header"
+    }
+  }
+}
