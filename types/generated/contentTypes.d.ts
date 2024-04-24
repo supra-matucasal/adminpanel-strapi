@@ -964,6 +964,7 @@ export interface ApiPartnershipPartnership extends Schema.CollectionType {
     singularName: 'partnership';
     pluralName: 'partnerships';
     displayName: 'Partnership';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -993,6 +994,12 @@ export interface ApiPartnershipPartnership extends Schema.CollectionType {
         };
       }>;
     Description: Attribute.Text &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Link: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
