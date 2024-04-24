@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blocks_featured_partnerships",
+  "info": {
+    "displayName": "FeaturedPartnerships"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.header"
+    },
+    "partnerships": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::partnership.partnership"
+    }
+  }
+}

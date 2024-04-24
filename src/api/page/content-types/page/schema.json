@@ -8,7 +8,6 @@
     "description": ""
   },
   "options": {
-    "reviewWorkflows": true,
     "draftAndPublish": true
   },
   "pluginOptions": {
@@ -46,7 +45,8 @@
         "blocks.hero",
         "blocks.pricing",
         "blocks.team",
-        "blocks.testimonial"
+        "blocks.testimonial",
+        "blocks.featured-partnerships"
       ],
       "pluginOptions": {
         "i18n": {

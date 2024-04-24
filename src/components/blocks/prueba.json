@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_blocks_pruebas",
+  "info": {
+    "displayName": "Prueba"
+  },
+  "options": {},
+  "attributes": {
+    "Prueba": {
+      "type": "string"
+    }
+  }
+}

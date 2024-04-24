@@ -46,6 +46,21 @@ export interface BlocksFaq extends Schema.Component {
   };
 }
 
+export interface BlocksFeaturedPartnerships extends Schema.Component {
+  collectionName: 'components_blocks_featured_partnerships';
+  info: {
+    displayName: 'FeaturedPartnerships';
+  };
+  attributes: {
+    header: Attribute.Component<'shared.header'>;
+    partnerships: Attribute.Relation<
+      'blocks.featured-partnerships',
+      'oneToMany',
+      'api::partnership.partnership'
+    >;
+  };
+}
+
 export interface BlocksFeaturesWithImages extends Schema.Component {
   collectionName: 'components_slices_features_with_images';
   info: {
@@ -113,6 +128,16 @@ export interface BlocksPricing extends Schema.Component {
   attributes: {
     header: Attribute.Component<'shared.header'>;
     pricingCards: Attribute.Component<'pricing.pricing-cards', true>;
+  };
+}
+
+export interface BlocksPrueba extends Schema.Component {
+  collectionName: 'components_blocks_pruebas';
+  info: {
+    displayName: 'Prueba';
+  };
+  attributes: {
+    Prueba: Attribute.String;
   };
 }
 
@@ -432,11 +457,13 @@ declare module '@strapi/types' {
       'blocks.cta-command-line': BlocksCtaCommandLine;
       'blocks.cta': BlocksCta;
       'blocks.faq': BlocksFaq;
+      'blocks.featured-partnerships': BlocksFeaturedPartnerships;
       'blocks.features-with-images': BlocksFeaturesWithImages;
       'blocks.features': BlocksFeatures;
       'blocks.hero': BlocksHero;
       'blocks.partnerships-list': BlocksPartnershipsList;
       'blocks.pricing': BlocksPricing;
+      'blocks.prueba': BlocksPrueba;
       'blocks.team': BlocksTeam;
       'blocks.testimonial': BlocksTestimonial;
       'card.card': CardCard;
