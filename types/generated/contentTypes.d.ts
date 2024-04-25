@@ -975,31 +975,31 @@ export interface ApiPartnershipPartnership extends Schema.CollectionType {
     };
   };
   attributes: {
-    Name: Attribute.String &
+    name: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Slug: Attribute.String &
+    slug: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Image: Attribute.Media &
+    image: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Description: Attribute.Text &
+    description: Attribute.Text &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Link: Attribute.String &
+    link: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
