@@ -887,6 +887,54 @@ export interface ApiGridDynamicZoneGridDynamicZone
   };
 }
 
+export interface ApiMissionMission extends Schema.CollectionType {
+  collectionName: 'missions';
+  info: {
+    singularName: 'mission';
+    pluralName: 'missions';
+    displayName: 'Mission';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    'import-export-entries': {
+      idField: 'id';
+    };
+  };
+  attributes: {
+    event_name: Attribute.String;
+    title: Attribute.String;
+    subtitle: Attribute.String;
+    question: Attribute.String;
+    correct_answer: Attribute.String;
+    image_src: Attribute.String;
+    active_from: Attribute.DateTime;
+    active_until: Attribute.DateTime;
+    sequence: Attribute.Integer;
+    hubspot_crate_property: Attribute.String;
+    answer_index: Attribute.Integer;
+    description: Attribute.Text;
+    answers: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::mission.mission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::mission.mission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Schema.CollectionType {
   collectionName: 'pages';
   info: {
@@ -1196,6 +1244,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::global.global': ApiGlobalGlobal;
       'api::grid-dynamic-zone.grid-dynamic-zone': ApiGridDynamicZoneGridDynamicZone;
+      'api::mission.mission': ApiMissionMission;
       'api::page.page': ApiPagePage;
       'api::partnership.partnership': ApiPartnershipPartnership;
       'api::partnerships-page.partnerships-page': ApiPartnershipsPagePartnershipsPage;
