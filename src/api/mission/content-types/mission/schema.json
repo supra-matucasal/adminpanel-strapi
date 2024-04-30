@@ -54,6 +54,12 @@
     },
     "answers": {
       "type": "json"
+    },
+    "mission_questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::mission-question.mission-question",
+      "mappedBy": "mission"
     }
   }
 }

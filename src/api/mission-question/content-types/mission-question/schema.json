@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mission_questions",
+  "info": {
+    "singularName": "mission-question",
+    "pluralName": "mission-questions",
+    "displayName": "Mission_Question",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "import-export-entries": {
+      "idField": "id"
+    }
+  },
+  "attributes": {
+    "question": {
+      "type": "string"
+    },
+    "answers": {
+      "type": "json"
+    },
+    "correct_answer": {
+      "type": "string"
+    },
+    "answer_index": {
+      "type": "integer"
+    },
+    "mission": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::mission.mission",
+      "inversedBy": "mission_questions"
+    }
+  }
+}

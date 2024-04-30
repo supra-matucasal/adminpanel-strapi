@@ -917,6 +917,11 @@ export interface ApiMissionMission extends Schema.CollectionType {
     answer_index: Attribute.Integer;
     description: Attribute.Text;
     answers: Attribute.JSON;
+    mission_questions: Attribute.Relation<
+      'api::mission.mission',
+      'oneToMany',
+      'api::mission-question.mission-question'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -928,6 +933,51 @@ export interface ApiMissionMission extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::mission.mission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMissionQuestionMissionQuestion
+  extends Schema.CollectionType {
+  collectionName: 'mission_questions';
+  info: {
+    singularName: 'mission-question';
+    pluralName: 'mission-questions';
+    displayName: 'Mission_Question';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    'import-export-entries': {
+      idField: 'id';
+    };
+  };
+  attributes: {
+    question: Attribute.String;
+    answers: Attribute.JSON;
+    correct_answer: Attribute.String;
+    answer_index: Attribute.Integer;
+    mission: Attribute.Relation<
+      'api::mission-question.mission-question',
+      'manyToOne',
+      'api::mission.mission'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::mission-question.mission-question',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::mission-question.mission-question',
       'oneToOne',
       'admin::user'
     > &
@@ -1245,6 +1295,7 @@ declare module '@strapi/types' {
       'api::global.global': ApiGlobalGlobal;
       'api::grid-dynamic-zone.grid-dynamic-zone': ApiGridDynamicZoneGridDynamicZone;
       'api::mission.mission': ApiMissionMission;
+      'api::mission-question.mission-question': ApiMissionQuestionMissionQuestion;
       'api::page.page': ApiPagePage;
       'api::partnership.partnership': ApiPartnershipPartnership;
       'api::partnerships-page.partnerships-page': ApiPartnershipsPagePartnershipsPage;
